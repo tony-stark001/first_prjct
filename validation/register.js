@@ -18,7 +18,7 @@ module.exports = {
       res.push('Password is required');
 
     if(res.length > 0)
-    	return JSON.stringify(res);
+    	return res.toString();
 
     if (!validator.isAlphanumeric(username))
       res.push('Only alpha numeric letters are allowed in username field');
@@ -26,6 +26,6 @@ module.exports = {
     if (!validator.isEmail(email))
       res.push('Please enter a valid email');
 
-    return res.length > 0 ? JSON.stringify(res) : false;
+    return res.length > 0 ? res.toString() : false;
   }
 }
